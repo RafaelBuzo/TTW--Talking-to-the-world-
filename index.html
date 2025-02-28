@@ -134,5 +134,139 @@
             <p>Este é um exemplo de site com fundo na cor #d1eff9 e uma barra de pesquisa fixa no topo na cor #5271ff.</p>
         </div>
     </body>
-    </html>
+    </html><!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meu Site com Barra de Pesquisa e Ícone de Imagem</title>
+        <style>
+            body {
+                background-color: #d1eff9; /* Cor de fundo */
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
     
+            /* Estilo da barra de pesquisa */
+            .search-bar {
+                background-color: #5271ff; /* Cor da barra de pesquisa */
+                width: 100%;
+                padding: 15px 0;
+                display: flex;
+                justify-content: space-between; /* Alinha os itens à esquerda e à direita */
+                align-items: center;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                position: fixed; /* Fixa a barra no topo */
+                top: 0;
+                left: 0;
+                z-index: 1000; /* Garante que a barra fique acima de outros elementos */
+            }
+    
+            .search-bar .search-container {
+                display: flex;
+                align-items: center;
+                margin-left: 20px; /* Espaçamento à esquerda */
+            }
+    
+            .search-bar input[type="text"] {
+                width: 300px;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                font-size: 1em;
+                outline: none;
+            }
+    
+            .search-bar button {
+                padding: 10px 15px;
+                margin-left: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: #ffffff;
+                color: #5271ff;
+                font-size: 1em;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+    
+            .search-bar button:hover {
+                background-color: #f0f0f0;
+            }
+    
+            /* Ícone de adicionar imagem */
+            .search-bar .add-image-icon {
+                margin-right: 20px; /* Espaçamento à direita */
+                font-size: 24px;
+                cursor: pointer;
+                color: #ffffff; /* Cor do ícone */
+                transition: transform 0.3s ease;
+            }
+    
+            .search-bar .add-image-icon:hover {
+                transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+            }
+    
+            /* Estilo do conteúdo principal */
+            .container {
+                background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente para o conteúdo */
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                margin-top: 100px; /* Espaço para a barra fixa */
+                width: 80%;
+                max-width: 800px;
+            }
+    
+            h1 {
+                color: #333; /* Cor do texto */
+                font-size: 2.5em;
+            }
+    
+            p {
+                color: #555; /* Cor do texto */
+                font-size: 1.2em;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Barra de pesquisa -->
+        <div class="search-bar">
+            <!-- Campo de pesquisa e botão -->
+            <div class="search-container">
+                <input type="text" placeholder="Digite sua pesquisa..." />
+                <button type="button">Pesquisar</button>
+            </div>
+    
+            <!-- Ícone de adicionar imagem -->
+            <div class="add-image-icon" onclick="openImageUpload()">🖼️</div>
+        </div>
+    
+        <!-- Conteúdo principal -->
+        <div class="container">
+            <h1>Bem-vindo ao Meu Site!</h1>
+            <p>Este é um exemplo de site com fundo na cor #d1eff9, uma barra de pesquisa fixa no topo na cor #5271ff e um ícone para adicionar imagem.</p>
+        </div>
+    
+        <script>
+            // Função para abrir o seletor de arquivos (simulação)
+            function openImageUpload() {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'image/*'; // Aceita apenas arquivos de imagem
+                input.onchange = (event) => {
+                    const file = event.target.files[0];
+                    if (file) {
+                        alert(`Imagem "${file.name}" selecionada!`); // Exibe o nome do arquivo
+                        // Aqui você pode adicionar a lógica para exibir ou enviar a imagem
+                    }
+                };
+                input.click();
+            }
+        </script>
+    </body>
+    </html>
